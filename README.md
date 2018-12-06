@@ -28,7 +28,7 @@ class Bootstrapper extends StatelessWidget {
             configuration: Configuration.production,
             child: Resolver<String, Configuration>(
             creator: ((context,config) => config == Configuration.development ? "Debug now" : "Online"),
-            child: );
+            child: HomePage());
     }
 }
 
