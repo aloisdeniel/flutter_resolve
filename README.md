@@ -25,7 +25,7 @@ class Bootstrapper extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return Configurator<Configuration>(
-            configuration: this.configuration,
+            configuration: Configuration.production,
             child: Resolver<String, Configuration>(
             creator: ((context,config) => config == Configuration.development ? "Debug now" : "Online"),
             child: );
