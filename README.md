@@ -15,6 +15,29 @@ Features:
 
 ## Quickstart
 
+#### Provider
+
+```dart
+class Bootstrapper extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Provider<String>(
+            creator: (context) => "Hello world!",
+            child: HomePage());
+    }
+}
+
+class HomePage extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        final label = Resolver.of<String>(context);
+        return Text(label);
+    }
+}
+```
+
+#### Resolver
+
 ```dart
 enum Configuration {
   development,
