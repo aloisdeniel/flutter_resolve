@@ -1,6 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:resolve/src/utils.dart';
 
+/// An empty configuration.
+/// 
+/// See also:
+/// 
+/// * [Provider] for a [Resolver] with no configuration.
+abstract class NoConfiguration {}
+
 /// The [Configurator] is an [InheritedWidget] that exposes
 /// a global configuration for its descendants.
 /// 
@@ -16,6 +23,10 @@ class Configurator<TConfiguration> extends InheritedWidget {
   final TConfiguration configuration;
 
   static TConfiguration of<TConfiguration>(BuildContext context) {
+    if(TConfiguration == NoConfiguration) {
+      return null;
+    }
+
     final type = typeOf<Configurator<TConfiguration>>();
     Configurator<TConfiguration> configurator =
         context.inheritFromWidgetOfExactType(type);
