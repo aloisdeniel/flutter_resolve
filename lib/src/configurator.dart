@@ -29,7 +29,10 @@ class Configurator<TConfiguration> extends InheritedWidget {
 
     final type = typeOf<Configurator<TConfiguration>>();
     Configurator<TConfiguration> configurator =
-        context.inheritFromWidgetOfExactType(type);
+        context.dependOnInheritedWidgetOfExactType(type);
+    //  context.inheritFromWidgetOfExactType(type);
+    // INFO: 'inheritFromWidgetOfExactType' is deprecated and shouldn't be used. 
+    // Use dependOnInheritedWidgetOfExactType instead. This feature was deprecated after v1.12.1.
     assert(configurator != null, "you must add a $type in your widget tree");
     return configurator.configuration;
   }
