@@ -1,5 +1,5 @@
 name: resolve
-description: Managing dependencies with simple Widgets.
+description: This packages is particularly useful to manage dependencies with simple Widgets.
 version: 0.2.2
 author: Aloïs Deniel<alois.deniel@gmail.com>
 homepage: https://github.com/aloisdeniel/flutter_resolve
