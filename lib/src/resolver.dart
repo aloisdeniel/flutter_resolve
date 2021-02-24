@@ -55,7 +55,10 @@ class Resolver<T, TConfiguration> extends StatefulWidget {
   static T of<T>(BuildContext context) {
     final type = typeOf<_ResolverInherited<T>>();
     _ResolverInherited<T> resolver =
-        context.ancestorInheritedElementForWidgetOfExactType(type)?.widget;
+        context.getElementForInheritedWidgetOfExactType(type)?.widget;
+//        context.ancestorInheritedElementForWidgetOfExactType(type)?.widget;
+// INFO: 'ancestorInheritedElementForWidgetOfExactType' is deprecated and shouldn't be used. 
+// Use getElementForInheritedWidgetOfExactType instead. This feature was deprecated after v1.12.1.
     assert(resolver != null, "no Resolver<$type> found in the widget tree");
     return resolver.instance;
   }
